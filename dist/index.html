@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Complex border hexogonal button</title>
+</head>
+
+<body>
+    <button type="button" class="t-button">
+        <div class="t-button__wrap">
+            Hexogonal
+        </div>
+    </button>
+</body>
+
+</html>
+
+<style lang="css">
+    body,
+    .t-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .t-button {
+        position: relative;
+        box-sizing: border-box;
+        padding: 15px;
+        overflow: hidden;
+        font: 500 16px / 24px Serif;
+        color: gold;
+        text-align: center;
+        cursor: pointer;
+        transition: all .3s;
+        border: 0;
+        outline: 0;
+        background: none;
+        clip-path: polygon(evenodd, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 5% 100%, 0% 50%);
+        width: 200px;
+        height: 50px;
+    }
+
+    .t-button:hover::after,
+    .t-button:hover::before {
+        background-color: aquamarine;
+    }
+
+    .t-button:hover .t-button__wrap,
+    .t-button:hover .t-button__wrap::after,
+    .t-button:hover .t-button__wrap::before {
+        border-color: aquamarine;
+        color: aquamarine;
+    }
+
+    .t-button:hover {
+        background-color: gold;
+    }
+
+    .t-button::after,
+    .t-button::before {
+        position: absolute;
+        content: '';
+        inset: 0;
+        clip-path: polygon(evenodd, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 5.5% 98%, 0.63% 50%, 5.5% 2%, 94.63% 2.5%, 99.38% 50%, 94.5% 98.5%, 5.5% 98%, 5% 100%, 0% 50%);
+        background-color: gold
+    }
+
+    .t-button::after {
+        inset: 2px;
+    }
+
+    .t-button__wrap::after,
+    .t-button__wrap::before {
+        position: absolute;
+        background: transparent;
+        width: 2px;
+        height: 2px;
+        border: 2px solid gold;
+        transform: rotate(45deg) translateY(-48%);
+        content: '';
+        top: 50%;
+    }
+
+    .t-button__wrap::before {
+        left: 15px;
+    }
+
+    .t-button__wrap::after {
+        right: 15px;
+    }
+</style>
