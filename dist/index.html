@@ -17,6 +17,10 @@
 </html>
 
 <style lang="css">
+    * {
+        box-sizing: border-box;
+    }
+
     body,
     .t-button {
         display: flex;
@@ -26,7 +30,6 @@
 
     .t-button {
         position: relative;
-        box-sizing: border-box;
         padding: 15px;
         overflow: hidden;
         font: 500 16px / 24px Serif;
@@ -46,14 +49,14 @@
 
     .t-button:hover::after,
     .t-button:hover::before {
-        background-color: aquamarine;
+        background-color: green;
     }
 
     .t-button:hover .t-button__wrap,
     .t-button:hover .t-button__wrap::after,
     .t-button:hover .t-button__wrap::before {
-        border-color: aquamarine;
-        color: aquamarine;
+        border-color: green;
+        color: green;
     }
 
     .t-button:hover {
@@ -65,8 +68,9 @@
         position: absolute;
         content: '';
         inset: 0;
-        clip-path: polygon(evenodd, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 5.5% 98%, 0.63% 50%, 5.5% 2%, 94.63% 2.5%, 99.38% 50%, 94.5% 98.5%, 5.5% 98%, 5% 100%, 0% 50%);
-        background-color: gold
+        clip-path: polygon(evenodd, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 5.5% 98%, 0.5% 50%, 5.5% 2%, 94.5% 2%, 99.5% 50%, 94.5% 98.5%, 5.5% 98%, 5% 100%, 0% 50%);
+        background-color: gold;
+        box-sizing: border-box;
     }
 
     .t-button::after {
@@ -80,9 +84,10 @@
         width: 2px;
         height: 2px;
         border: 2px solid gold;
-        transform: rotate(45deg) translateY(-48%);
+        transform: rotate(45deg) translateY(-50%);
         content: '';
-        top: 50%;
+        top: 48.8%;
+        box-sizing: border-box;
     }
 
     .t-button__wrap::before {
